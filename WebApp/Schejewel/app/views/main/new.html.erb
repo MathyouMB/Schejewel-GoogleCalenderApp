@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Nice Try</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ 
+      
+  <style>
+   body {
+    margin: 0px;
+    }
+    container {
+        width: 100%;
+    	background-color: FFF;
+    }
+    container h1 {
+    font-size: 144px;
+		font-family: sans-serif;
+   	    color: 0080a8;
+    }
+
+    .datepicker-date-display {
+    background-color: #FF2F49;
+    }
+    .datepicker-table td.is-selected{
+    background-color: #FF2F49;  
+    }
+
+
+</style>
+
+</head>
+
+<body>
+  <div id="container"></div>
+  <br>
+  <div class="row">
+    <div class="col s12 m3"></div>
+    <div class="col s12 m6">
+    <div class="card-panel gray lighten-2">
+        <form>
+            Start Date:<br>
+            <div class="input-field">
+                <input type="text" class="datepicker" >
+            </div>
+        
+        </form>
+        <form>
+            End Date:<br>
+            <div class="input-field">
+                <input type="text" class="datepicker2" >
+            </div>
+        
+        </form>
+        <center>
+        <button class="btn waves-effect waves-light red" type="submit" name="action">Submit</button>
+        <href>
+        </center>
+    </div>
+    <div class="col s12 m3"></div>
+    
+    <br>
+    <br>
+
+    <div class="card-panel gray lighten-2">
+        <form>
+          
+          <p>
+            <%= calculate(Time.parse("2018-11-05 00:00:00 EST").iso8601,Time.parse("2018-11-10 00:00:00 EST").iso8601) %>
+          </p>
+
+
+          <%= form_tag("main/main", method: "post") do %>
+            <%= label_tag :longitude %><br>
+            <%= text_field_tag :longitude %>
+            <br>
+            <br>
+            <%= label_tag :latitude %><br>
+            <%= text_field_tag :latitude %>
+            <p>
+              <%= submit_tag("Submit") %>
+            </p>
+          <% end %>
+        
+        </form>
+        
+        
+    </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+     const Calender = document.querySelector('.datepicker');
+     M.Datepicker.init(Calender,{});
+
+     const Calender2 = document.querySelector('.datepicker2');
+     M.Datepicker.init(Calender2,{});
+  </script>
+
+  <script type="text/babel">
+ 
+  class Header extends React.Component {
+    render() {
+      var headerStyle = {
+        height: 200,
+        //alignSelf: 'stretch',
+        //textAlign: 'center',
+       // padding: 0,
+        backgroundColor: "#FF2F49",
+        WebkitFilter: "drop-shadow(0px 0px 5px #666)",
+        filter: "drop-shadow(0px 0px 5px #666)"
+      };
+
+      var logoStyle = {
+        height: 200,
+        display: 'flex', 
+        justifyContent: 'center'
+      };
+   
+      return (
+        <div style={headerStyle}>
+        <div style={logoStyle}><img src={"icon.png"}/></div>
+        </div>
+      );
+    }
+  }  
+  
+  
+  var destination = document.querySelector("#container");
+    ReactDOM.render(
+      
+    <Header/>,
+      destination
+    );
+  </script>
+</body>
+
+</html>
