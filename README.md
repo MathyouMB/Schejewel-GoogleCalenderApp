@@ -21,7 +21,7 @@ To configure the script add your google calender share url on this line.
                                 time_max: timeMax)
 ```
 
-To change the start and end date in the script, edit the method call at the bottum of thye script
+To change the start and end date in the script, edit the method call at the bottum of the script.
 
 ```ruby
 calculate(Time.parse("2018-11-05 00:00:00 EST").iso8601,Time.parse("2018-11-10 00:00:00 EST").iso8601)
