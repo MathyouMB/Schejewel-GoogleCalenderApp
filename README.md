@@ -7,6 +7,9 @@ My current goal with this project is to create a small rails webapp that takes i
 You may notice the view portion is kind of a mess, and this is because I'm using this project as an oppurtunity to experiment with React, and the Materialize CSS framework. 
 I also initially created a script version of the app which is complete and can be used by anyone by simply adding your google calender share code into the script.
 
+<h3>Script Version Setup</h3>
+To configure the script add your google calender share url on this line.
+
 ```ruby
 
   calendar_id = 'YOUR CALENDER URL HERE'
